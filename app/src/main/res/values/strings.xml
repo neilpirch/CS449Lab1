@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UmpireBuddy</string>
+
+    <string name="strike_button_label">Strike</string>
+    <string name="ball_button_label">Ball</string>
+    <string name="ball_counter_label">Balls:</string>
+    <string name="ball_count">0</string>
+    <string name="strike_counter_label">Strikes:</string>
+    <string name="strike_count">0</string>
+</resources>

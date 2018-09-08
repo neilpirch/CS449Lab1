@@ -1,11 +1,16 @@
 package com.neilpirch.umpirebuddy;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import static android.nfc.NfcAdapter.EXTRA_DATA;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +29,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ball_button.setOnClickListener(this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
     /** called when user presses "Ball" */
     public void onClick(View btn) {
         /** call different function for each button */
@@ -36,6 +47,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.reset:
+                reset_count();
+                return true;
+
+            case R.id.about:
+                Intent intent = new Intent(this, AboutActivity.class);
+                intent.putExtra(EXTRA_DATA, "Umpire Buddy, By Neil Pirch 2018");
+                startActivity(intent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /** perform the actions to add a Ball */

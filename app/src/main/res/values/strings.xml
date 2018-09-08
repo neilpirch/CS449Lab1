@@ -7,4 +7,8 @@
     <string name="ball_count">0</string>
     <string name="strike_counter_label">Strikes:</string>
     <string name="strike_count">0</string>
+    <string name="Reset">Reset</string>
+    <string name="About">About</string>
+    <string name="about_text">About Text</string>
+    <string name="about_data">Umpire Buddy, By Neil Pirch 2018</string>
 </resources>
